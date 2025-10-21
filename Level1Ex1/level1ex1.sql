@@ -191,44 +191,44 @@ VALUES
 ('Street D', '44', NULL, NULL, 'Barcelona', '08001', 'Spain');
 
 -- Suppliers
-INSERT INTO
-suppliers (supplier_name, address_id, telephone, fax, nif)
+INSERT INTO suppliers
+(supplier_name, address_id, telephone, fax, nif)
 VALUES 
 ('Supplier 1', 1, '666666666', '931111111', '12345678A'),
 ('Supplier 2', 2, '666777888', '932222222', '87654321B');
 
 -- Brands
-INSERT INTO
-brands (brand_name, supplier_id)
+INSERT INTO brands
+(brand_name, supplier_id)
 VALUES 
 ('Ray Ban', 1),
 ('Oakley', 2);
 
 -- Glasses
-INSERT INTO
-glasses (lens_prescription_left, lens_prescription_right, frame_type, frame_color, lens_color_left, lens_color_right, price, brand_id)
+INSERT INTO glasses
+(lens_prescription_left, lens_prescription_right, frame_type, frame_color, lens_color_left, lens_color_right, price, brand_id)
 VALUES
 (1.25, 1.50, 'plastic', 'black', 'transparent', 'transparent', 300.00, 1),
 (0.75, 1.00, 'metal', 'gold', 'dark', 'dark', 100.00, 2),
 (2.00, 2.25, 'rimless', 'silver', 'transparent', 'transparent', 200.00, 1);
 
 -- Customers
-INSERT INTO
-customers (customer_name, address_id, telephone, email, registration_date, recommender_id)
+INSERT INTO customers
+(customer_name, address_id, telephone, email, registration_date, recommender_id)
 VALUES
 ('Albert', 3, '600123123', 'albert@example.com', '2025-01-01', NULL),
 ('Joan', 4, '600456456', 'joan@example.com', '2025-01-01', 1);
 
 -- Sellers
-INSERT INTO
-sellers (seller_name)
+INSERT INTO sellers
+(seller_name)
 VALUES 
 ('Anna'),
 ('Marc');
 
 -- Sales
-INSERT INTO
-sales (seller_id, customer_id, glasses_id, sale_date)
+INSERT INTO sales
+(seller_id, customer_id, glasses_id, sale_date)
 VALUES
 (1, 1, 1, '2025-01-10'),
 (2, 1, 3, '2025-01-20'),
@@ -265,7 +265,7 @@ WHERE sel.seller_id = 1 AND s.sale_date BETWEEN '2025-01-01' AND '2025-12-31'
 GROUP BY sel.seller_name, b.brand_name, g.frame_type, g.frame_color, g.lens_color_left, g.lens_color_right;
 
 -- Providers with any glasses sold
-SELECT DISTINCT sup.supplier_name AS supplier, b.brand_name AS brand
+SELECT DISTINCT sup.supplier_name AS supplier
 FROM sales s
 JOIN glasses g ON s.glasses_id = g.glasses_id
 JOIN brands b ON g.brand_id = b.brand_id
