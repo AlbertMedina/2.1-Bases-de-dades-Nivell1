@@ -11,10 +11,10 @@ Desing of a database for an optician's shop to manage customers, sales, employee
 #### Exercise 2 - Pizza Shop
 Desing of a database for a pizza shop to manage customers, orders, products, stores...
 
-### Level 2 YouTube
+### Level 2 - YouTube
 Desing of a database for YouTube to manage users, channels, videos, playlists...
 
-### Level 3 Spotify
+### Level 3 - Spotify
 Desing of a database for Spotify to manage users, subscriptions, playlists, artists, albums, songs...
 
 ## Technologies Used
